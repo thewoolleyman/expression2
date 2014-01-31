@@ -1,0 +1,10 @@
+@name E2 Hat
+@inputs
+@outputs
+@persist V:vector
+@trigger all
+
+interval(10)
+
+V = owner():shootPos() + vec(100,100,100) - entity():pos()
+entity():applyForce((V*25 - entity():vel()) * entity():mass())
